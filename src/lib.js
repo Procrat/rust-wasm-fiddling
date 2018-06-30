@@ -9,8 +9,7 @@ export function js_query_local_storage() {
 
 function phone_home_callback(vec) {
   let arr = rust_vec_to_js_array(vec);
-  console.log("Called home");
-  console.log("Got", arr, "back");
+  console.log("Called home and got", arr, "back");
   return js_array_to_rust_vec(["JS array", "returned", "from home"].concat(arr));
 };
 

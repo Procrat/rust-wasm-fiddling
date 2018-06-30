@@ -16,6 +16,6 @@ pub fn manipulate_and_return_array<'a, 'b>(array: &'b [&'a str]) -> Vec<&'a str>
     array.iter().cloned().rev().collect()
 }
 
-// pub fn phone_home<'a, 'b, T: SomeTrait>(t: &'a T, array: &'b [&'a str]) -> Vec<String> {
-//     t.manipulate_and_return_array(array)
-// }
+pub fn phone_home<'a, 'b, T: SomeTrait>(t: &'a T, array: &'b [&'a str]) -> Vec<String> {
+    t.manipulate_and_return_array(array)
+}

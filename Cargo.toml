@@ -9,4 +9,8 @@ crate-type = ["cdylib"]
 [dependencies]
 serde = "1.0"
 serde_derive = "1.0"
-wasm-bindgen = { version = "0.2", features = ["serde-serialize"] }
+[dependencies.wasm-bindgen]
+# version = "0.2"
+git = "ssh://git@github.com/rustwasm/wasm-bindgen"
+rev = "e06255f"
+features = ["serde-serialize"]

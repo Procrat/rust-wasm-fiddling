@@ -26,13 +26,11 @@ function main(rust) {
   vec2.free();
 
   // Return Rust structs from JS is not supported yet:
-  // https://github.com/rustwasm/wasm-bindgen/issues/320
-  //
-  // let arr3 = ["JS array", "passed and returned", "to and from rust", "\u03A9\u26a1\u2211"];
-  // let vec3 = js_array_to_rust_vec(wasm, arr3);
-  // let new_arr3 = rust_vec_to_js_array(wasm, wasm.phone_home(vec3));
-  // console.log(new_arr3);
-  // // phone_home takes an owned value, so there is no need to free vec3
+  let arr3 = ["JS array", "passed and returned", "to and from rust", "\u03A9\u26a1\u2211"];
+  let vec3 = js_array_to_rust_vec(arr3);
+  let new_arr3 = rust_vec_to_js_array(rust.phone_home(vec3));
+  console.log(new_arr3);
+  // phone_home takes an owned value, so there is no need to free vec3
 
   let item = { key1: "value 1", key2: "value 2", a_list: ["item1: \u03A9\u26a1\u2211"] };
   localStorage.setItem("mystorage", JSON.stringify(item));
